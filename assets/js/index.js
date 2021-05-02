@@ -1,7 +1,7 @@
 
 let useraddress;
 let replica_contract;
-
+let web3rpc;
 
 function walletmodal(){
     $('#wallet-popup').modal('show');
@@ -17,6 +17,7 @@ async function startmetamsk(){
     provider = await new ethers.providers.Web3Provider(window.ethereum);
     signer = await provider.getSigner();
     useraddress = await signer.getAddress();
+    web3rpc = await new ethers.providers.JsonRpcProvider("https://rpc-mainnet.maticvigil.com/");
     enableLinks();
 }
 
@@ -32,7 +33,7 @@ window.onload = async function() {
 
 //画像左から0,1,2,3,4,5。
 async function enableLink( _num ){
-    const web3rpc = await new ethers.providers.JsonRpcProvider("https://rpc-mainnet.maticvigil.com/");
+    // const web3rpc = await new ethers.providers.JsonRpcProvider("https://rpc-mainnet.maticvigil.com/");
     const mycontract = await new ethers.Contract( nftaddressArray[_num] , abi , web3rpc );
     console.log(useraddress);
     let fromblockchain0 = await mycontract.balanceOf(useraddress);
