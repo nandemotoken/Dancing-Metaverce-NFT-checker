@@ -8,7 +8,7 @@ const howtogetmessage = [
     //
     "まだ発行されていない" ,
     //nandemotoken 4
-    "nanakusa.ioで現在販売中！限定5個！"
+    "nanakusa.ioで販売！限定5個！\n(Matic network設定が必要です)"
 ]
 
 const howtogetlink = [
