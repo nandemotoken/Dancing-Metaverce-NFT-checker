@@ -55,5 +55,7 @@ async function enableLink( _num ){
 
 
 async function howtoget( _num ){
-    window.alert(howtogetlist[_num]);
+    document.getElementById('howtogetlink').innerHTML = howtogetmessage[_num];
+    document.getElementById('howtogetlink').href = howtogetlink[_num];
+    $('#howtogetmodal').modal('show');
 }
